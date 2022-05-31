@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyStopWatch"
         mc:Ignorable="d"
-        Title="My Stopwatch" Opacity="0.7" Height="155" Width="296" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" MouseDown="Window_MouseDown" WindowStartupLocation="Manual" Loaded="Window_Loaded" Background="{x:Null}">
+        Title="My Stopwatch" Opacity="0.7" Height="228" Width="296" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" MouseDown="Window_MouseDown" WindowStartupLocation="Manual" Loaded="Window_Loaded" Background="{x:Null}">
     <Window.ContextMenu>
         <ContextMenu Name="contextMenu" Opacity="0.7">
             <MenuItem Header="Transparent" IsCheckable="True" IsChecked="True" Name="transparent" Checked="transparent_Checked" Unchecked="transparent_Unchecked"></MenuItem>
@@ -17,19 +17,6 @@
     </Window.ContextMenu>
     <Border Background="#FF2C2C2C" BorderBrush="Black" BorderThickness="0,0,0,0" CornerRadius="30,2,30,2">
         <Grid>
-            <Grid HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="278" Margin="0,18,0,0">
-                <Label x:Name="lbl_time" Content="00 : 00 : 00" HorizontalAlignment="Left" VerticalAlignment="Center" Width="197" Foreground="White" FontSize="40" FontFamily="Yu Gothic UI Light"/>
-                <Button Style="{StaticResource ButtonStyle}" x:Name="btn_playPause"  Content="" HorizontalAlignment="Left" Margin="212,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" MouseLeave="btn_MouseLeave" Padding="1,1,1,1" Click="btn_playPause_Click" BorderThickness="2,2,2,2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/play_icon.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Style="{StaticResource ButtonStyle}" x:Name="btn_stop"  Content="" HorizontalAlignment="Left" Margin="248,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" Padding="1,1,1,1" MouseLeave="btn_MouseLeave" Click="btn_stop_Click" ToolTip="Reset Time" BorderThickness="2,2,2,2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/stop_icon.png"/>
-                    </Button.Background>
-                </Button>
-            </Grid>
             <Button Style="{StaticResource ButtonStyle}" x:Name="btn_close"  Content="X" HorizontalAlignment="Left" Margin="272,0,0,0" VerticalAlignment="Top" Height="20" Width="20" Cursor="Hand" MouseEnter="btn_mini_MouseEnter" BorderBrush="{x:Null}" MouseLeave="btn_mini_MouseLeave" Padding="1,0,1,1" Background="#FF2C2C2C" Foreground="White" Click="btn_close_Click" FontSize="14" FontWeight="Bold"/>
             <Button Style="{StaticResource ButtonStyle}" x:Name="btn_minimize"  Content="―" HorizontalAlignment="Left" Margin="248,0,0,0" VerticalAlignment="Top" Height="20" Width="20" Cursor="Hand" MouseEnter="btn_mini_MouseEnter" BorderBrush="{x:Null}" MouseLeave="btn_mini_MouseLeave" Padding="1,0,1,2" Background="#FF2C2C2C" Foreground="White" Click="btn_minimize_Click" FontSize="14" FontWeight="Bold"/>
             <Button Style="{StaticResource ButtonStyle}" x:Name="btn_setting"  Content="…" HorizontalAlignment="Left" Margin="222,0,0,0" VerticalAlignment="Top" Height="20" Width="20" Cursor="Hand" MouseEnter="btn_mini_MouseEnter" BorderBrush="{x:Null}" MouseLeave="btn_mini_MouseLeave" Padding="1,0,1,2" Background="#FF2C2C2C" Foreground="White" RenderTransformOrigin="0.5,0.5" Click="btn_setting_Click" FontSize="14" FontWeight="Bold">
@@ -42,21 +29,54 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Grid HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="278" Margin="0,89,0,0">
-                <Label x:Name="lbl_time1" Content="00 : 00 : 00" HorizontalAlignment="Left" VerticalAlignment="Center" Width="197" Foreground="White" FontSize="40" FontFamily="Yu Gothic UI Light"/>
-                <Button Style="{StaticResource ButtonStyle}" x:Name="btn_playPause1"  Content="" HorizontalAlignment="Left" Margin="212,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" MouseLeave="btn_MouseLeave" Padding="1,1,1,1" Click="btn_playPause_Click" BorderThickness="2,2,2,2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/play_icon.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Style="{StaticResource ButtonStyle}" x:Name="btn_stop1"  Content="" HorizontalAlignment="Left" Margin="248,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" Padding="1,1,1,1" MouseLeave="btn_MouseLeave" Click="btn_stop_Click" ToolTip="Reset Time" BorderThickness="2,2,2,2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/stop_icon.png"/>
-                    </Button.Background>
-                </Button>
+            <Grid HorizontalAlignment="Center" Height="71" Margin="0,10,0,0" VerticalAlignment="Top" Width="296">
+                <Grid HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="278" Margin="0,8,0,0">
+                    <Label x:Name="lbl_time" Content="00 : 00 : 00" HorizontalAlignment="Left" VerticalAlignment="Center" Width="197" Foreground="White" FontSize="40" FontFamily="Yu Gothic UI Light"/>
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btn_playPause"  Content="" HorizontalAlignment="Left" Margin="212,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" MouseLeave="btn_MouseLeave" Padding="1,1,1,1" Click="btn_playPause_Click" BorderThickness="2,2,2,2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/play_icon.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btn_stop"  Content="" HorizontalAlignment="Left" Margin="248,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" Padding="1,1,1,1" MouseLeave="btn_MouseLeave" Click="btn_stop_Click" ToolTip="Reset Time" BorderThickness="2,2,2,2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/stop_icon.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+                <Label Content="──▼ Parsiss ──────────────────────────────" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Cyan" FontSize="14" Width="296" FontFamily="Bahnschrift Light" FontStretch="Normal"/>
             </Grid>
-            <Label Content="──▼ Parsiss ──────────────────────────────" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="Cyan" FontSize="14" Width="296" FontFamily="Bahnschrift Light" FontStretch="Normal"/>
-            <Label Content="──▼ SurgiSight ────────────────────────────" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,82,0,0" Foreground="Cyan" FontSize="14" Width="296" FontFamily="Bahnschrift Light" FontStretch="Normal"/>
+            <Grid HorizontalAlignment="Center" Height="70" Margin="0,82,0,0" VerticalAlignment="Top">
+                <Grid HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="278" Margin="0,7,0,0">
+                    <Label x:Name="lbl_time1" Content="00 : 00 : 00" HorizontalAlignment="Left" VerticalAlignment="Center" Width="197" Foreground="White" FontSize="40" FontFamily="Yu Gothic UI Light"/>
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btn_playPause1"  Content="" HorizontalAlignment="Left" Margin="212,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" MouseLeave="btn_MouseLeave" Padding="1,1,1,1" Click="btn_playPause_Click" BorderThickness="2,2,2,2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/play_icon.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btn_stop1"  Content="" HorizontalAlignment="Left" Margin="248,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" Padding="1,1,1,1" MouseLeave="btn_MouseLeave" Click="btn_stop_Click" ToolTip="Reset Time" BorderThickness="2,2,2,2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/stop_icon.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+                <Label Content="──▼ SurgiSight ────────────────────────────" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Cyan" FontSize="14" Width="296" FontFamily="Bahnschrift Light" FontStretch="Normal"/>
+            </Grid>
+            <Grid HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Margin="0,152,0,0">
+                <Grid HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Width="278" Margin="0,7,0,0">
+                    <Label x:Name="lbl_time2" Content="00 : 00 : 00" HorizontalAlignment="Left" VerticalAlignment="Center" Width="197" Foreground="White" FontSize="40" FontFamily="Yu Gothic UI Light"/>
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btn_playPause2"  Content="" HorizontalAlignment="Left" Margin="212,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" MouseLeave="btn_MouseLeave" Padding="1,1,1,1" Click="btn_playPause_Click" BorderThickness="2,2,2,2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/play_icon.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btn_stop2"  Content="" HorizontalAlignment="Left" Margin="248,21,0,0" VerticalAlignment="Top" Height="30" Width="30" Cursor="Hand" MouseEnter="btn_MouseEnter" BorderBrush="#FFFFAAFA" Padding="1,1,1,1" MouseLeave="btn_MouseLeave" Click="btn_stop_Click" ToolTip="Reset Time" BorderThickness="2,2,2,2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/stop_icon.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+                <Label Content="──▼ VisioImpulse ────────────────────────────" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Cyan" FontSize="14" Width="296" FontFamily="Bahnschrift Light" FontStretch="Normal"/>
+            </Grid>
         </Grid>
     </Border>
 </Window>

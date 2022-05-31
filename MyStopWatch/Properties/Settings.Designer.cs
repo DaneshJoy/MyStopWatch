@@ -94,5 +94,41 @@ namespace MyStopWatch.Properties {
                 this["seconds1"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int hours2 {
+            get {
+                return ((int)(this["hours2"]));
+            }
+            set {
+                this["hours2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int minutes2 {
+            get {
+                return ((int)(this["minutes2"]));
+            }
+            set {
+                this["minutes2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int seconds2 {
+            get {
+                return ((int)(this["seconds2"]));
+            }
+            set {
+                this["seconds2"] = value;
+            }
+        }
     }
 }
