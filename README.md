@@ -8,8 +8,8 @@ Personal stopwatch to record my remote work times
   - Switch between transparent/opaque modes
   - Stay on top mode
   - Auto-save all times (every 1 minute)
-  - Save current timez on close
-  - Show last saved times on startup
+  - Save current times on close
+  - Start with last saved times
 
 - Screenshot
 
