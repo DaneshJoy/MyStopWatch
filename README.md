@@ -13,6 +13,6 @@ Personal stopwatch to record my remote work times
 
 - Screenshot
 
-  ![Screenshot of MyStopWatch](/Screenshot 2022-05-31.png "Screenshot of MyStopWatch")
+  <img alt="Screenshot of MyStopWatch" src="Screenshot 2022-05-31.png" style="width:60%">
 
   
