@@ -46,6 +46,13 @@ namespace MyStopWatch
                 if (offset1.Seconds == 59)
                     save_time(1);
             }
+            else if ((sender as DispatcherTimer).Tag == "timer2")
+            {
+                offset2 = offset2 + new TimeSpan(0, 0, 1);
+                lbl_time2.Content = offset2.ToString(@"hh\ \:\ mm\ \:\ ss");
+                if (offset2.Seconds == 59)
+                    save_time(2);
+            }
         }
 
         public MainWindow()
@@ -102,6 +109,21 @@ namespace MyStopWatch
                     btn_playPause1.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/pause_icon.png")));
                 }
             }
+            else if ((sender as Button).Name == "btn_playPause2")
+            {
+                if (running2)
+                {
+                    running2 = false;
+                    dispatcherTimer2.Stop();
+                    btn_playPause2.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/play_icon.png")));
+                }
+                else
+                {
+                    running2 = true;
+                    dispatcherTimer2.Start();
+                    btn_playPause2.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/pause_icon.png")));
+                }
+            }
 
         }
         private void btn_stop_Click(object sender, RoutedEventArgs e)
@@ -122,6 +144,14 @@ namespace MyStopWatch
                 btn_playPause1.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/play_icon.png")));
                 lbl_time1.Content = "00 : 00 : 00";
             }
+            else if ((sender as Button).Name == "btn_stop2")
+            {
+                running2 = false;
+                dispatcherTimer2.Stop();
+                offset2 = new TimeSpan(0, 0, 0);
+                btn_playPause2.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/play_icon.png")));
+                lbl_time2.Content = "00 : 00 : 00";
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -136,6 +166,9 @@ namespace MyStopWatch
             offset1 = new TimeSpan(Properties.Settings.Default.hours1,
                 Properties.Settings.Default.minutes1,
                 Properties.Settings.Default.seconds1);
+            offset2 = new TimeSpan(Properties.Settings.Default.hours2,
+                Properties.Settings.Default.minutes2,
+                Properties.Settings.Default.seconds2);
 
             lbl_time.Content = offset.ToString(@"hh\ \:\ mm\ \:\ ss");
             dispatcherTimer = new DispatcherTimer();
@@ -148,6 +181,12 @@ namespace MyStopWatch
             dispatcherTimer1.Tag = "timer1";
             dispatcherTimer1.Tick += dispatcherTimer_Tick;
             dispatcherTimer1.Interval = TimeSpan.FromSeconds(1);
+
+            lbl_time2.Content = offset2.ToString(@"hh\ \:\ mm\ \:\ ss");
+            dispatcherTimer2 = new DispatcherTimer();
+            dispatcherTimer2.Tag = "timer2";
+            dispatcherTimer2.Tick += dispatcherTimer_Tick;
+            dispatcherTimer2.Interval = TimeSpan.FromSeconds(1);
         }
 
 
@@ -189,6 +228,13 @@ namespace MyStopWatch
                 Properties.Settings.Default.hours1 = offset1.Hours;
                 Properties.Settings.Default.minutes1 = offset1.Minutes;
                 Properties.Settings.Default.seconds1 = offset1.Seconds;
+                Properties.Settings.Default.Save();
+            }
+            else if (id == 2)
+            {
+                Properties.Settings.Default.hours2 = offset2.Hours;
+                Properties.Settings.Default.minutes2 = offset2.Minutes;
+                Properties.Settings.Default.seconds2 = offset2.Seconds;
                 Properties.Settings.Default.Save();
             }
         }
