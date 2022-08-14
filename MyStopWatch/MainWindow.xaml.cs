@@ -30,16 +30,7 @@ namespace MyStopWatch
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            if ((sender as DispatcherTimer).Tag == "timer0")
-            {
-                offset = offset + new TimeSpan(0, 0, 1);
-                //var dd = App.Current.Properties["offset"];
-                // var time = DateTime.Parse("00:00:" + i);
-                lbl_time.Content = offset.ToString(@"hh\ \:\ mm\ \:\ ss");
-                if (offset.Seconds == 59)
-                    save_time(0);
-            }
-            else if ((sender as DispatcherTimer).Tag == "timer1")
+            if ((sender as DispatcherTimer).Tag == "timer1")
             {
                 offset1 = offset1 + new TimeSpan(0, 0, 1);
                 lbl_time1.Content = offset1.ToString(@"hh\ \:\ mm\ \:\ ss");
@@ -79,22 +70,7 @@ namespace MyStopWatch
 
         private void btn_playPause_Click(object sender, RoutedEventArgs e)
         {
-            if ((sender as Button).Name == "btn_playPause")
-            {
-                if (running)
-                {
-                    running = false;
-                    dispatcherTimer.Stop();
-                    btn_playPause.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/play_icon.png")));
-                }
-                else
-                {
-                    running = true;
-                    dispatcherTimer.Start();
-                    btn_playPause.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/pause_icon.png")));
-                }
-            }
-            else if ((sender as Button).Name == "btn_playPause1")
+            if ((sender as Button).Name == "btn_playPause1")
             {
                 if (running1)
                 {
@@ -128,15 +104,7 @@ namespace MyStopWatch
         }
         private void btn_stop_Click(object sender, RoutedEventArgs e)
         {
-            if ((sender as Button).Name == "btn_stop")
-            {
-                running = false;
-                dispatcherTimer.Stop();
-                offset = new TimeSpan(0, 0, 0);
-                btn_playPause.Background = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/play_icon.png")));
-                lbl_time.Content = "00 : 00 : 00";
-            }
-            else if ((sender as Button).Name == "btn_stop1")
+            if ((sender as Button).Name == "btn_stop1")
             {
                 running1 = false;
                 dispatcherTimer1.Stop();
@@ -160,21 +128,12 @@ namespace MyStopWatch
             Left = desktopWorkingArea.Right - Width;
             Top = desktopWorkingArea.Bottom - Height;
 
-            offset = new TimeSpan(Properties.Settings.Default.hours,
-                Properties.Settings.Default.minutes,
-                Properties.Settings.Default.seconds);
             offset1 = new TimeSpan(Properties.Settings.Default.hours1,
                 Properties.Settings.Default.minutes1,
                 Properties.Settings.Default.seconds1);
             offset2 = new TimeSpan(Properties.Settings.Default.hours2,
                 Properties.Settings.Default.minutes2,
                 Properties.Settings.Default.seconds2);
-
-            lbl_time.Content = offset.ToString(@"hh\ \:\ mm\ \:\ ss");
-            dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tag = "timer0";
-            dispatcherTimer.Tick += dispatcherTimer_Tick;
-            dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
 
             lbl_time1.Content = offset1.ToString(@"hh\ \:\ mm\ \:\ ss");
             dispatcherTimer1 = new DispatcherTimer();
@@ -207,7 +166,6 @@ namespace MyStopWatch
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
-            save_time(0);
             save_time(1);
             save_time(2);
             // App.Current.Properties["offset"] = offset.ToString(@"hh\ \:\ mm\ \:\ ss");
@@ -216,14 +174,7 @@ namespace MyStopWatch
 
         private void save_time(int id)
         {
-            if (id == 0)
-            {
-                Properties.Settings.Default.hours = offset.Hours;
-                Properties.Settings.Default.minutes = offset.Minutes;
-                Properties.Settings.Default.seconds = offset.Seconds;
-                Properties.Settings.Default.Save();
-            }
-            else if (id == 1)
+            if (id == 1)
             {
                 Properties.Settings.Default.hours1 = offset1.Hours;
                 Properties.Settings.Default.minutes1 = offset1.Minutes;
