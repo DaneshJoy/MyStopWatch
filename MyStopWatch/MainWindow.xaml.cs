@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.Windows.Shapes;
+using MD.PersianDateTime;
 
 namespace MyStopWatch
 {
@@ -146,6 +147,10 @@ namespace MyStopWatch
             dispatcherTimer2.Tag = "timer2";
             dispatcherTimer2.Tick += dispatcherTimer_Tick;
             dispatcherTimer2.Interval = TimeSpan.FromSeconds(1);
+
+            var persianDateTime = PersianDateTime.Now.ToString("yyyy/MM/dd");
+            var dateTime = DateTime.Now.ToString("yyyy/MM/dd");
+            label_date.Content = "──● " + persianDateTime + " ───────────────────────────";
         }
 
 

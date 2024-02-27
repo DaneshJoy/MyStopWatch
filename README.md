@@ -15,4 +15,7 @@ Personal stopwatch to record my remote work times
 
   <img alt="Screenshot of MyStopWatch" src="Screenshot 2022-05-31.png" style="width:60%">
 
+  ## Requirements:
   
+  - PersianDateTime: https://github.com/Mds92/MD.PersianDateTime
+    - ``` Install-Package MD.PersianDateTime ```

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyStopWatch"
         mc:Ignorable="d"
-        Title="My Stopwatch" Opacity="0.7" Height="162" Width="296" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" MouseDown="Window_MouseDown" WindowStartupLocation="Manual" Loaded="Window_Loaded" Background="{x:Null}">
+        Title="My Stopwatch" Opacity="0.7" Height="185" Width="296" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" MouseDown="Window_MouseDown" WindowStartupLocation="Manual" Loaded="Window_Loaded" Background="{x:Null}">
     <Window.ContextMenu>
         <ContextMenu Name="contextMenu" Opacity="0.7">
             <MenuItem Header="Transparent" IsCheckable="True" IsChecked="True" Name="transparent" Checked="transparent_Checked" Unchecked="transparent_Unchecked"></MenuItem>
@@ -61,6 +61,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
+            <Label x:Name="label_date" Content="──● yyyy/mm/dd ───────────────────────────" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Cyan" FontSize="14" Width="296" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="0,148,0,0"/>
         </Grid>
     </Border>
 </Window>

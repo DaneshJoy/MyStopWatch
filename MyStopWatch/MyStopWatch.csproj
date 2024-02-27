@@ -2,15 +2,23 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>MyStopwatch_icon.ico</ApplicationIcon>
+    <ApplicationIcon>MyStopWatch_icon2.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="pause_icon.png" />
     <None Remove="play_icon.png" />
     <None Remove="stop_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="MyStopWatch_icon2.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MD.PersianDateTime" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
