@@ -150,7 +150,7 @@ namespace MyStopWatch
 
             var persianDateTime = PersianDateTime.Now.ToString("yyyy/MM/dd");
             var dateTime = DateTime.Now.ToString("yyyy/MM/dd");
-            label_date.Content = "──● " + persianDateTime + " ───────────────────────────";
+            label_date.Content = "─────────────────────────────● " + persianDateTime + " ";
         }
 
 

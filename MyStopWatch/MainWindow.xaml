@@ -61,7 +61,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Label x:Name="label_date" Content="──● yyyy/mm/dd ───────────────────────────" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Cyan" FontSize="14" Width="296" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="0,148,0,0"/>
+            <Label x:Name="label_date" Content="─────────────────────────● yyyy/mm/dd ───" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Cyan" FontSize="14" Width="296" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="0,148,0,0"/>
         </Grid>
     </Border>
 </Window>
