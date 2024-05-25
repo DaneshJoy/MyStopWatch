@@ -1,0 +1,2 @@
+pyinstaller --onefile --windowed --icon=MyStopWatch_icon2.ico MyStopwatch.py
+# find the executable in ./dist/MyStopwatch

@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=MyStopWatch
+Exec=/home/saeed/Apps/MyStopWatch_python/run.sh
+Icon=/home/saeed/Apps/MyStopWatch_python/MyStopWatch_icon2.ico
+StartupWMClass=MyStopwatch.py
